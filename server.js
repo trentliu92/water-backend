@@ -24,7 +24,7 @@ app.get('/getweather', function(req, res){
 
  app.get('/waterplants', function(req, res){
     res.header("Access-Control-Allow-Origin", "*");
-    res.send("watering");
+    res.send({"data": "watering"});
 });
 
 
