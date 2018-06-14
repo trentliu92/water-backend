@@ -13,14 +13,17 @@ app.use(bodyParser.json());
 app.listen(port, () => console.log(`App started on port ` + port));
 
 app.get('/', function(req, res){
-   res.send("home");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.send("home");
 });
 
 app.get('/getweather', function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
     res.send("home");
 });
 
  app.get('/waterplants', function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
     res.send("watering");
 });
 
