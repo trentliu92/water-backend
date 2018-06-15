@@ -22,9 +22,26 @@ app.get('/getweather', function(req, res){
     res.send("home");
 });
 
- app.get('/waterplants', function(req, res){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.send({"data": "watering"});
+ app.get('/waterplants', function(req, res) {
+    request.get({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'GET',
+        url: 'http://ec2-184-73-110-34.compute-1.amazonaws.com/waterplants'
+    }, function(error, response, body) {
+        res.send(response.body);
+    })
 });
 
-
+request.get({
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    method: 'GET',
+    url: 'http://ec2-184-73-110-34.compute-1.amazonaws.com/waterplants'
+}, function(error, response, body) {
+    console.log(response.body)
+})
