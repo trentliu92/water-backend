@@ -75,6 +75,7 @@ app.get('/getweather', function(req, res){
 });
 
 app.get('/waterplants', function(req, res) {
+    res.header("Access-Controll-Allow-Origin", "*");
     request.get({
         headers: {
             'Accept': 'application/json',
@@ -83,8 +84,9 @@ app.get('/waterplants', function(req, res) {
         method: 'GET',
         url: process.env + '/waterplants'
     }, function(error, response, body) {
-        res.send(response.body);
-    })
+	console.log(response);
+        res.send(response);
+    });
 });
 
 // request.get({
