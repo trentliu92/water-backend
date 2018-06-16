@@ -81,7 +81,7 @@ app.get('/waterplants', function(req, res) {
             'Content-Type': 'application/json'
         },
         method: 'GET',
-        url: '10.0.0.245:1337/waterplants'
+        url: 'http://10.0.0.245:1337/waterplants'
     }, function(error, response, body) {
         res.send(response.body);
     })
