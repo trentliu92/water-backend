@@ -30,8 +30,8 @@ MongoClient.connect(getURI(), {native_parser:true}, function(err, client) {
 });
 
 app.get('/login', function(req, res) {
-    retrievePasswordHash("trentliu92").then(response => {
-        bcrypt.compare("userpass", response, function(err,res){
+    retrievePasswordHash("").then(response => {
+        bcrypt.compare("", response, function(err,res){
             console.log(res);
         });
     });
@@ -81,7 +81,7 @@ app.get('/waterplants', function(req, res) {
             'Content-Type': 'application/json'
         },
         method: 'GET',
-        url: 'http://10.0.0.245:1337/waterplants'
+        url: process.env + '/waterplants'
     }, function(error, response, body) {
         res.send(response.body);
     })
