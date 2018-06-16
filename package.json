@@ -9,7 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^2.0.1",
+    "bson-ext": "^2.0.0",
+    "concurrently": "^3.5.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "http-errors": "~1.6.2",
+    "mongodb": "^3.0.8",
     "request": "^2.87.0"
   }
 }
